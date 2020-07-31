@@ -92,6 +92,8 @@ window.addEventListener('click', function(e) {
 	// On click of simiral movie title search for this movie
 	if ( e.srcElement.classList.contains('modal__body__simiral__title')) {
 		searchText = e.srcElement.dataset.movietitle;
+
+		searchSection.textContent = '';
 		showMovies(searchText);
 		closeModal();
 	}
@@ -113,7 +115,7 @@ searchInput.addEventListener('keyup', (e) => {
 		searchSection.classList.add('section--hide');
 	} else {
 
-		// Hide latest movies section
+		// Clear previous search results
 		searchSection.textContent = '';
 		showMovies();
 	}	
